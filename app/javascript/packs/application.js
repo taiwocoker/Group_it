@@ -4,6 +4,8 @@
 // that code so it'll be compiled.
 
 require("@rails/ujs").start()
+//= require jquery_ujs
+//= require bootstrap-sprockets
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
