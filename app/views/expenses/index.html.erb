@@ -1,0 +1,23 @@
+<h1 align="center">Listing all Expenses</h1>
+<% @expenses.each do |expense| %>
+  <div class="row">
+   <div class="col-xs-8 col-xs-offset-2">
+    <div class="well well-lg">
+      <div class="expense-name">
+        <%= link_to expense.name, expense_path(expense) %>
+      </div>
+    <div class="expense-amount">
+      <%= expense.amount %>
+      <small> Created at:
+      <%= time_ago_in_words(expense.created_at) %> ago</small>
+    </div>
+      <div class="expense-actions">
+        <%= link_to "Edit this expense", edit_expense_path(expense), class: "btn btn-xs btn-primary" %>
+      <%= link_to "Delete this expense", expense_path(expense), method: :delete, data: { confirm: "Are you sure you want to delete the expense?"},class: "btn btn-xs btn-danger" %>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>
+
+

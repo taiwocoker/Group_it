@@ -1,3 +1,4 @@
+$navbar-default-bg: black;
 @import "bootstrap-sprockets"; 
 @import "bootstrap";
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
@@ -46,3 +47,26 @@
     text-align: center;
     color: white;
   }
+
+  .expense-name {
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+   #logo {
+   float: left;
+   font-size: 1.7em;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    font-weight: bold;
+ }
+        
+#logo:hover {
+    color: #fff;
+    text-decoration: none;
+}
+        
+.center {
+    text-align: center;
+}
