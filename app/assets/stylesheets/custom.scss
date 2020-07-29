@@ -1,0 +1,48 @@
+@import "bootstrap-sprockets"; 
+@import "bootstrap";
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+@font-face {
+  font-family: "";
+  src: url(/app/assets/fonts/FontsFree-Net-Romantic-Couple-Bold.ttf) format("truetype");
+  src: url(/app/assets/fonts/FontsFree-Net-Proxima-Nova-Light.otf) format("truetype");
+}
+
+.btn_login,
+  .btn_signup{
+    display: block;
+    margin: auto;
+    padding: 10px 75px;
+    text-transform: uppercase;
+    font-size: large;
+  }
+
+  .main_color{
+    background-color: #3778c2 !important;
+    color: white;
+  }
+
+  .text_color{
+    color: #434b54;
+  }
+
+  .name{
+    margin-bottom: 15%;
+    font-family: 'Lobster', cursive;
+    
+  }
+  .m_t-15{
+    margin-top: 15%;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    line-height: 1;
+  }
+  
+  h1 {
+    font-size: 3em;
+    letter-spacing: -2px;
+    margin-bottom: 30px;
+    text-align: center;
+    color: white;
+  }

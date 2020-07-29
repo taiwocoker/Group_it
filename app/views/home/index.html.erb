@@ -1,7 +1,9 @@
-<div class="d-flex align-items-center flex-column mb-3 h-100">
-  <div class="mb-auto pt-5 display-3">GroupIt</div>
-  <div class="p-2 display-2 btn btn-lg button w-50">
-     <%= link_to 'LOG IN', login_path, class: 'btn btn-primary btn-lg' %>
-  </div>
-  <div class="pb-5 display-2 btn btn-lg">SIGN UP</div>
-</div>
+<% provide(:title, 'Home page') %>
+    <div class="row">
+        <aside class="col-md-6 col-md-offset-3 m_t-15">
+            <h1 class="text_color name">Group-It</h1>
+  
+            <%= link_to "log in", login_path, class: "btn_login btn main_color" %>
+            <%= link_to "sign up", signup_path, class: "btn_signup btn text_color" %>
+        </aside>
+    </div>
