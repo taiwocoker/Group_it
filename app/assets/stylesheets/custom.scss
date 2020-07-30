@@ -9,6 +9,23 @@ $navbar-default-bg: black;
   src: url(/app/assets/fonts/FontsFree-Net-Proxima-Nova-Light.otf) format("truetype");
 }
 
+.badge {
+
+  background-color: #CEF6F5;
+  
+  text-transform: uppercase;
+  
+  letter-spacing: -1px;
+  
+  font-weight: bold;
+  
+  }
+  
+  .input_checkbox input {
+  
+  width: auto !important;
+  
+  }
 .btn_login,
   .btn_signup{
     display: block;

@@ -1,0 +1,25 @@
+<h1 align="center"><%= "Group: " + @group.name %></h1>
+
+<div align="center">
+
+<% if logged_in? %>
+
+<div class="row">
+
+<span class="badge"><%= link_to "Edit Group Name", edit_group_path(@group) %></span>
+
+</div>
+
+<% end %>
+
+<%= render @group_expenses %>
+
+</div>
+
+<%= render 'expenses/form' %>
+
+<div align="center">
+
+<%= render @group_expenses %>
+
+</div>

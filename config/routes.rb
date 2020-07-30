@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :groups, except: [:destroy]
   resources :expenses
   resources :users
   root 'home#index'

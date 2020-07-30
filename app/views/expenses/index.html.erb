@@ -1,6 +1,6 @@
 <h1 align="center">Listing all Expenses</h1>
 
-<div class="expense-total">Total:</span> <span class="font-weight-bold"> <%= @expenses.sum{|expense| expense.amount} %> &#36; </span></div>
+<div class="expense-total center">Total:</span> <span class="font-weight-bold"> <%= @expenses.sum{|expense| expense.amount} %> &#36; </span></div>
 <% @expenses.each do |expense| %>
   <div class="row">
    <div class="col-xs-8 col-xs-offset-2">
@@ -11,8 +11,9 @@
       </div>
     <div class="expense-amount">
       <p><%= expense.amount %> &#36; </p>
-      <small> Created :
-      <%= time_ago_in_words(expense.created_at) %> ago</small>
+      <div><small> Created :
+      <%= time_ago_in_words(expense.created_at) %> ago</small></div>
+      <small><%= expense.created_at.day %>-<%= expense.created_at.month %>-<%= expense.created_at.year %></small>
     </div>
       <div class="expense-actions">
         <%= link_to "Edit this expense", edit_expense_path(expense), class: "btn btn-xs btn-primary" %>

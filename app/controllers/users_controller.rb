@@ -22,7 +22,7 @@ class UsersController < ApplicationController
 
       if @user.save
          flash[:success] = 'Welcome to Group-It #{@user.username}'
-        redirect_to expenses_path
+        redirect_to new_expense_path
       else
         render :new
       end
