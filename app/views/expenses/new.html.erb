@@ -1,5 +1,43 @@
-<h1>Create an Expense</h1>
-
-<%= render 'form', expense: @expense %>
-
-<%= link_to 'Back', expenses_path %>
+<% provide(:title, "All my expenses") %>
+<% provide(:navbar_page_title, "all my expenses") %>
+<nav class="main_color">
+  <ul class="ul_in_nav">
+    <li><a class="page" href="/groups"><i class="fa arrow fa-bars"></i></a></li>
+    <li><a class="page" href="#"><h1>EXPENSES</h1></a></li>
+    <li><a class="page" href="#"><i class="fa arrow fa-search"></i></a></li>
+  </ul>
+</nav>
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+        </div>
+        <div class="col-md-6">
+            <div class="card bg-gray " style="width: 100%">
+                <%= form_for(@expense, :html => {class: "form-horizontal", role: "form"}) do |f| %>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item mr-3">
+                        <%= f.text_field :name, placeholder: "Name of expense" %>
+                        </li>
+                        <li class="list-group-item mr-3">
+                        <%= f.number_field :amount, placeholder: "amount of expense" %>
+                        </li>
+                        <li class="list-group-item mr-3">
+                        <p>Choose group:</p>
+                        <%= f.collection_check_boxes :group_ids, Group.all,:id, :name do |check| %>
+                        <div class="collection-check-box">
+                            <%= check.check_box %>
+                            <%= check.label %>
+                        </div>
+                        </li>
+                    </ul>
+                    <% end %>
+                </div>
+                <div class="around_btn">
+                <%= f.submit "Add new expense", class: "btn-styles" %>
+                </div> 
+              <%end%>
+        </div>
+        <div class="col-md-3">
+        </div>
+    </div>
+</div>

@@ -27,6 +27,10 @@ $navbar-default-bg: black;
     color: #434b54;
   }
 
+  .second_color{
+    background: #5fb523;
+  }
+
   .name{
     margin-bottom: 15%;
     font-family: 'Lobster', cursive;
@@ -48,25 +52,169 @@ $navbar-default-bg: black;
     color: white;
   }
 
-  .expense-name {
-    font-weight: bold;
-    font-size: 1.5em;
+  h2 {
+    font-size: 1.2em;
+    letter-spacing: -1px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: normal;
+    color: white;
+  }
+  
+  h3{
+    text-align: center;
+    color: white;
+  }
+  p {
+    font-size: 1.1em;
+    line-height: 1.7em;
+  }
+
+  .user_avatar{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: block;
+    margin: auto;
+  }
+
+  .ul_in_nav{
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    cursor: pointer;
+  }
+ input,
+textarea, 
+select, 
+.uneditable-input {
+    border: 1px solid #bbb;
+    width: 80%;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+  }
+  .btn-styles{
+      text-transform: uppercase;
+      color: white;
+      font-size: 20px;
+      background: rgb(11, 211, 28);
+      border: 2px solid white;
+  }
+  .around_btn{
+      padding: 10px;
+      background: rgb(11, 211, 28);
+  }
+  input {
+    height: auto !important;
+  }
+
+  .btn_login,
+  .btn_signup{
+    display: block;
+    margin: auto;
+    padding: 10px 75px;
+    text-transform: uppercase;
+    font-size: large;
+  }
+
+.arrow{
+    content: "";
+    color: white;
+    font-size: 25px !important;
+    margin-top: 25px;
 }
 
-   #logo {
-   float: left;
-   font-size: 1.7em;
-    color: #fff;
+.icon{
+    border: 1px solid white;
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.underline{
+  width: 175px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgb(184, 172, 172);
+}
+
+  .text_upper{
     text-transform: uppercase;
-    letter-spacing: -1px;
-    font-weight: bold;
- }
-        
-#logo:hover {
-    color: #fff;
-    text-decoration: none;
+  }
+  .text_capital{
+    text-transform: capitalize;
+  }
+  .text_lower{
+    text-transform: lowercase;
+  }
+  .container-fluid{
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .container_gradient{
+    width: 100%;
+    padding-top: 60px;
+    height: 650px;
+    background: linear-gradient(#151557, #3778c2);
 }
-        
-.center {
+
+section {
+    overflow: auto;
+  }
+  
+  textarea {
+    resize: vertical;
+  }
+  
+  .center {
     text-align: center;
-}
+    h1 {
+      margin-bottom: 10px;
+    }
+  }
+
+  .mr-3{
+    margin: 5px !important;
+  }
+  .ml-3{
+    margin-left: 15px;
+  }
+  .bg-gray{
+    background: #cecece;
+  }
+
+  .icon_group{
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+  }
+  span .proxima_bold{
+    font-size: 23px;
+  }
+  #error_explanation {
+    color: red;
+    ul {
+      color: red;
+      margin: 0 0 30px 0;
+    }
+  }
+  
+  .field_with_errors {
+    @extend .has-error;
+    .form-control {
+      color: $state-danger-text;
+    }
+  }
+
+  .total{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .page {
+    position: relative;
+    display: block;
+    padding: 2px 2px;
+    margin-left: -1px;
+    line-height: 1.25;
+    
+  }

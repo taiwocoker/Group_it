@@ -23,6 +23,7 @@ gem 'jbuilder', '~> 2.7'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'jquery-rails'
 gem 'bootstrap-sass', '~> 3.3.5'
+gem 'font_awesome5_rails'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

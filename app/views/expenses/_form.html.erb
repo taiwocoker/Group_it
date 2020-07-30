@@ -10,6 +10,7 @@
       </ul>
     </div>
   <% end %>
+<div class="expense-total">Total:</span> <span class="font-weight-bold"> <%= @expenses.sum{|expense| expense.amount} %> &#36; </span></div>
 
   <div class="field">
     <%= form.label :name %>

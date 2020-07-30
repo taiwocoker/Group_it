@@ -1,18 +1,24 @@
-<h1 align="center">Log in</h1>
+<nav class="main_color">
+  <ul class="ul_in_nav">
+    <li><a class="page" href="/"><i class="fa arrow fa-arrow-left"></i></a></li>
+    <li><a class="page" href="#"><h1>LOG IN</h1></a></li>
+    <li><a class="page" href="#"><h3></h3></a></li>
+  </ul>
+</nav>
 
 <%= form_for(:session, :html => {class: "form-horizontal", role: "form"}, url: login_path) do |f| %>
 
 <div class="form-group">
 
-<div class="control-label col-sm-2">
+<div class="control-label col-sm-2 mt-5">
 
 <%= f.label :username %>
 
 </div>
 
-<div class="col-sm-8">
+<div class="col-sm-8 mt-5">
 
-<%= f.text_field :email, class: "form-control", placeholder: "Enter username", autofocus: true %>
+<%= f.text_field :username, class: "form-control", placeholder: "Enter username", autofocus: true %>
 
 </div>
 
@@ -23,7 +29,7 @@
 
 <div class="col-sm-offset-2 col-sm-10">
 
-<%= f.submit "Log in", class: 'btn btn-primary btn-lg' %>
+<%= f.submit "Log in", class: 'btn btn-success btn-lg' %>
 
 </div>
 
