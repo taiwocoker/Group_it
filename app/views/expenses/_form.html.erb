@@ -1,33 +1,17 @@
-<%= form_with(model: expense, local: true) do |form| %>
-  <% if expense.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(expense.errors.count, "error") %> prohibited this expense from being saved:</h2>
-
-      <ul>
-        <% expense.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
+<div class="sign_form bg-custom-light rounded  p-2 py-5">
+  
+  <%= form_with(model: expense, local: true) do |form| %>
+    <div class="actions">
+      <%= form.text_field :name, placeholder: "Name", class: "w-100 p-2 my-2" %><br>
+      <%= form.number_field :amount, placeholder: "Price", class: "w-100 p-2 my-2" %><br>
+      
+      <%= form.label :group_id, @message , class: "w-100 m-0 mt-2 p-0" %>
+      <%= form.select :group_id, options_from_collection_for_select(@groups, :id, :name), {:include_blank => 'None'}, {:class => 'w-100 p-2 my-2'} %>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      <div class="w-100 p-2 bg-success-custom my-5">
+        <%= submit_tag("Add new expense", :class=>"w-100 bg-success-custom text-white border-custom p-2") %>
+      </div>
     </div>
   <% end %>
-<div class="expense-total">Total:</span> <span class="font-weight-bold"> <%= @expenses.sum{|expense| expense.amount} %> &#36; </span></div>
-
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :amount %>
-    <%= form.number_field :amount %>
-  </div>
-
-  <div class="field">
-    <%= form.label :group_id, @message , class: "w-100 m-0 mt-2 p-0" %>
-      <%= form.select :group_id, options_from_collection_for_select(@groups, :id, :name), {:include_blank => 'None'}, {:class => 'w-100 p-2 my-2'} %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>

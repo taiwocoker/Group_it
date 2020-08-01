@@ -16,11 +16,11 @@ class ExpensesController < ApplicationController
   def new
     @expense = Expense.new
     @groups = current_user.groups
-    # @message = if @groups.size.zero?
-      # 'If you want to choose a group for your expense, you should create a group before adding it.'
-    # else
-      # 'Choose a group for you expense.'
-    # end
+     @message = if @groups.size.zero?
+      'If you want to choose a group for your expense, you should create a group before adding it.'
+     else
+      'Choose a group for you expense.'
+     end
   end
 
   def edit
@@ -33,7 +33,7 @@ class ExpensesController < ApplicationController
     # @expense.author = User.first
     if @expense.save
       flash[:success] = 'Expense created successfully!'
-      redirect_to current_user
+      redirect_to expenses_path
     else
       flash.now[:danger] = 'Expense wasn`t created'
       render :new

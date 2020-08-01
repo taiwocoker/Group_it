@@ -1,25 +1,7 @@
-<% @title= 'Categorized'%>
-<%#= render 'list' %>
-<div class=" m-0 p-3 bg-white d-flex justify-content-between h4"><span class="text-secondary">Total:</span> <span class="font-weight-bold"> <%= @expenses.sum{|expense| expense.amount} %> &#36; </span></div>
-<div class=" m-0 p-3  bg-light-gray">
-  <p id="notice m-0 p-0"><%= notice %></p>
-  <% @expenses.each do |expense| %>
-    <div class="my-2 bg-white p-3 d-flex justify-content-start">
-    <% group=current_user.groups.select{|l| expense.groups.include?(l)}.first %>
+<% @title="My Expenses" %>
+<%= render 'layouts/navigation' %>
+<%= render 'list' %>
 
-      <div>
-        <p class="text-secondary h6 m-0 p-0 pt-2"><strong>Expense Name: </strong><%= expense.name %></p>
-        <% unless @expense_user.nil? %>
-          <p class="text-secondary h6 m-0 p-0 pt-2 h6"><strong>User: </strong><%= expense.user.name %></p>
-        <% end %>
-        <p class="text-secondary h6 m-0 p-0 pt-3"><strong>Added: </strong> <%= expense.created_at.day %>-<%= expense.created_at.month %>-<%= expense.created_at.year %></p>
-      </div>
-      <div class="ml-auto">
-        <p class="text-secondary h6 m-0 p-0 pt-2 font-weight-bold"><%= expense.amount %> &#36; </p>
-      </div>
-    </div>
-  <% end %>
-</div>
 <div class="w-100 p-2 bg-success-custom m-0" >
-    <%= link_to 'ADD NEW', new_expense_path, :class=>"d-block w-100 bg-success-custom text-white border-custom p-2 text-center" %>
+    <%= link_to 'ADD NEW EXPENSE', new_expense_path, :class=>"d-block w-100 bg-success-custom text-white border-custom p-2 text-center" %>
 </div
