@@ -1,22 +1,26 @@
 class ExpensesController < ApplicationController
   before_action :set_expense, only: [:show, :edit, :update, :destroy]
   before_action :require_user
-  # GET /expenses
-  # GET /expenses.json
+  
   def index
-    @expenses = Expense.all
-    @expense = Expense.new
+    @expenses = current_user.expenses.desc.select{|expense| expense.groups.exists?}
   end
 
-  # GET /expenses/1
-  # GET /expenses/1.json
+  def external
+    @expenses = current_user.expenses.desc.reject { |expense| expense.groups.exists?}
+  end
+
   def show
   end
 
-  # GET /expenses/new
   def new
     @expense = Expense.new
-    @expenses = Expense.all
+    @groups = current_user.groups
+    # @message = if @groups.size.zero?
+      # 'If you want to choose a group for your expense, you should create a group before adding it.'
+    # else
+      # 'Choose a group for you expense.'
+    # end
   end
 
   def edit
@@ -24,10 +28,12 @@ class ExpensesController < ApplicationController
 
   def create
     @expense = current_user.expenses.build(expense_params)
+    @group = Group.find_by(id: group_params[:group_id])
+    @expense.groups << @group unless @group.nil?
     # @expense.author = User.first
     if @expense.save
       flash[:success] = 'Expense created successfully!'
-      redirect_to expenses_path
+      redirect_to current_user
     else
       flash.now[:danger] = 'Expense wasn`t created'
       render :new
@@ -35,7 +41,7 @@ class ExpensesController < ApplicationController
   end
 
   def update
-    if @expense.update(activity_params)
+    if @expense.update(expense_params)
       flash[:success] = 'Expense updated successfully!'
       redirect_to expenses_path
     else
@@ -46,10 +52,7 @@ class ExpensesController < ApplicationController
 
   def destroy
     @expense.destroy
-    respond_to do |format|
-      format.html { redirect_to expenses_url, notice: 'Expense was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    redirect_to expenses_path
   end
 
   private
@@ -59,5 +62,9 @@ class ExpensesController < ApplicationController
 
     def expense_params
       params.require(:expense).permit(:name, :amount, group_ids: [])
+    end
+
+    def group_params
+      params.require(:expense).permit(:group_id)
     end
 end

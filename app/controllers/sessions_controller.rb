@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
       if @user
         session[:author_id] = @user.id
         flash[:success] = 'Successfully logged in.'
-        redirect_to users_path
+        redirect_to @user
       else
         flash.now[:danger] = 'Error logging in.'
         render 'new'

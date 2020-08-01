@@ -24,6 +24,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'jquery-rails'
 gem 'bootstrap-sass', '~> 3.3.5'
 gem 'font_awesome5_rails'
+gem 'gravatar_image_tag', '~> 1.2'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

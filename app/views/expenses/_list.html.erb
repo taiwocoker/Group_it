@@ -1,5 +1,3 @@
-<% @title= 'Categorized'%>
-<%#= render 'list' %>
 <div class=" m-0 p-3 bg-white d-flex justify-content-between h4"><span class="text-secondary">Total:</span> <span class="font-weight-bold"> <%= @expenses.sum{|expense| expense.amount} %> &#36; </span></div>
 <div class=" m-0 p-3  bg-light-gray">
   <p id="notice m-0 p-0"><%= notice %></p>
@@ -20,6 +18,3 @@
     </div>
   <% end %>
 </div>
-<div class="w-100 p-2 bg-success-custom m-0" >
-    <%= link_to 'ADD NEW', new_expense_path, :class=>"d-block w-100 bg-success-custom text-white border-custom p-2 text-center" %>
-</div

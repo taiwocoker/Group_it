@@ -22,6 +22,11 @@
     <%= form.number_field :amount %>
   </div>
 
+  <div class="field">
+    <%= form.label :group_id, @message , class: "w-100 m-0 mt-2 p-0" %>
+      <%= form.select :group_id, options_from_collection_for_select(@groups, :id, :name), {:include_blank => 'None'}, {:class => 'w-100 p-2 my-2'} %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

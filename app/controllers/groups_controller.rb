@@ -1,6 +1,7 @@
 class GroupsController < ApplicationController
+    before_action :set_group, only: %i[show edit update destroy]
     def index
-        @groups = Group.all
+        @groups = current_user.groups.order('name ASC')
     end
 
     def new
@@ -8,35 +9,47 @@ class GroupsController < ApplicationController
     end
 
     def create
-        @group = Group.new(group_params)
+        @group = current_user.groups.build(group_params)
         if @group.save
-            flash[:success] = "Category was created successfully"
-            redirect_to groups_path
+            flash[:success] = "Group was created successfully"
+            redirect_to @group
         else
+            flash.now[:danger] = 'Group was not created'
             render 'new'
         end
     end
     
     def show
-        @group = Group.find(params[:id])
-        @group_expenses = @group.expenses.all
+        if current_user.groups.include? set_group
+            @group = set_group
+            @group = set_group.expenses
+            @expense_user = true
+        else
+            flash[:danger] = 'You are not allowed to view other users groups'
+        end
     end
 
     def edit
-        @group = Group.find(params[:id])
+        
     end
         
     def update
-         @group = group.find(params[:id])
+         
         if @group.update(group_params)
             flash[:success] = "Group name was successfully updated"
             redirect_to group_path(@group)
         else
+            flash.now[:danger] = 'Group was not updated'
             render 'edit'
         end
     end
     
     private
+
+    def set_group
+        @group = Group.find(params[:id])
+    
+    end
     
     def group_params
        params.require(:group).permit(:name)

@@ -1,12 +1,14 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  before_action :require_user
+  # before_action :require_user
   
   def index
     @users = User.all
+
   end
 
   def show
+    @expenses = @user.expenses.all
   end
 
   def new
@@ -21,33 +23,17 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
       if @user.save
-         flash[:success] = 'Welcome to Group-It #{@user.username}'
-        redirect_to new_expense_path
+        session[:author_id] = @user.id
+         flash[:success] = 'Welcome to Group-It #{@users.username}'
+        redirect_to login_path
       else
         render :new
       end
   
   end
 
-  def update
-    respond_to do |format|
-      if @user.update(user_params)
-        format.html { redirect_to expenses_path, notice: 'User was successfully updated.' }
-        format.json { render :show, status: :ok, location: @user }
-      else
-        format.html { render :edit }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  def destroy
-    @user.destroy
-    respond_to do |format|
-      format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
-      format.json { head :no_content }
-    end
-  end
+  
+  
 
   private
     def set_user
@@ -55,6 +41,6 @@ class UsersController < ApplicationController
     end
 
     def user_params
-      params.require(:user).permit(:username)
+      params.require(:user).permit(:username, :image)
     end
 end
