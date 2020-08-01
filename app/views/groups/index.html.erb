@@ -1,28 +1,6 @@
-<h1 align="center">Listing All Categories</h1>
-
-<div align="center">
-
-<% @groups.each do |group| %>
-
-<ul class="listing">
-
-<div class="row">
-
-<div class="well col-md-4 col-md-offset-4">
-
-<li class="expense-title">
-
-<%= link_to "#{group.name}", group_path(group) %>
-
-</li>
-<li><small><%= pluralize(group.expenses.count, "expense") %></small></li>
-
-</div>
-
-</div>
-
-</ul>
-
-<% end %>
-
+<% @title="My Group" %>
+<%= render 'layouts/navigation' %>
+<%= render 'list' %>
+<div class="w-100 p-2 bg-success-custom m-0">
+    <%= link_to 'CREATE A NEW GROUP', new_group_path, :class=>"d-block w-100 bg-success-custom text-white border-custom p-2 text-center" %>
 </div>
