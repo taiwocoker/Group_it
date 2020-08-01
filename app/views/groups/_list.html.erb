@@ -1,11 +1,13 @@
 <div class="shadow m-0 p-3  bg-light-gray">
   <p id="notice m-0 p-0"><%= notice %></p>
   <% @groups.each do |group| %>
-    
+    <%= link_to(group) do %>
+    <div class="my-2 bg-white p-3 d-flex justify-content-start">
+    <div>
           <p class="text-secondary h6 m-0 p-0 py-1"><strong>Group Name: </strong><%= group.name %></p>
           <p class="text-secondary h6 m-0 p-0 py-2"><strong>Created: </strong> <%= group.created_at.day %>-<%= group.created_at.month %>-<%= group.created_at.year %></p>
         </div>
       </div>
-
+<% end %>
   <% end %>
 </div>

@@ -19,7 +19,7 @@ class ExpensesController < ApplicationController
      @message = if @groups.size.zero?
       'If you want to choose a group for your expense, you should create a group before adding it.'
      else
-      'Choose a group for you expense.'
+      'Choose a group for your expense.'
      end
   end
 

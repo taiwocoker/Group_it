@@ -22,7 +22,7 @@ class GroupsController < ApplicationController
     def show
         if current_user.groups.include? set_group
             @group = set_group
-            @group = set_group.expenses
+            @expenses = set_group.expenses
             @expense_user = true
         else
             flash[:danger] = 'You are not allowed to view other users groups'
