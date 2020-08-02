@@ -329,3 +329,29 @@ section {
     width: 64px;
     height: 64px;
   }
+
+  .h3.text-light.p-0.m-0.mx-5 {
+    position: relative;
+    left: 234px;
+}
+
+.navbar_nav {
+  display: flex;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+  position: relative;
+  justify-content: end;
+  right: -126px;
+}
+
+.white {
+  color: #fff !important;
+}
+a.nav-item.nav-link {
+  margin-right: -4px;
+}
+
+.backk {
+  position: absolute;
+}

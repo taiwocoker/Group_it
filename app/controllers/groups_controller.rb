@@ -1,5 +1,7 @@
 class GroupsController < ApplicationController
     before_action :set_group, only: %i[show edit update destroy]
+    before_action :require_user
+    
     def index
         @groups = current_user.groups.order('name ASC')
     end
