@@ -1,4 +1,4 @@
-# Book Store
+# Group your expenses
 
 > This is the capstone project of the Microverse Ruby on Rails curriculum. This capstone project is completed as part of the Microverse remote software developement curriculum using the pair programming approach.
 
@@ -55,7 +55,7 @@
 
 ## Live Demo
 
-[Live Demo Link]()
+[Live Demo Link](https://serene-tundra-02609.herokuapp.com/)
 
 ### Prerequisites
 
