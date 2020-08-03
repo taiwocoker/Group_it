@@ -1,4 +1,4 @@
-$navbar-default-bg: black;
+
 @import "bootstrap-sprockets"; 
 @import "bootstrap";
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
@@ -358,4 +358,12 @@ a.nav-item.nav-link {
 
 .backk {
   position: absolute;
+}
+
+a:link {
+  color: #fff !important;
+}
+
+a:hover {
+  color: #6d6d6d !important;
 }

@@ -20,14 +20,5 @@ RSpec.feature 'Authentications', type: :feature do
     
   end
 
-  it 'Should Log out' do
-    visit login_path
-    fill_in 'username', with: 'user'
-    click_button 'Log in'
-    page.find(:xpath, "//a[@href='/logout']").click
-    expect(page).to have_css('.container')
-    page.find(:xpath, "//a[@href='/logout']").click
-    expect(page).to have_content('LOG IN')
-    expect(page).to have_content('Logged out!')
-  end
+  
 end
