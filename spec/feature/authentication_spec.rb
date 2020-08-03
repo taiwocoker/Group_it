@@ -17,8 +17,5 @@ RSpec.feature 'Authentications', type: :feature do
     fill_in 'username', with: 'user'
     click_button 'Log in'
     expect(page).to have_css('.container')
-    
   end
-
-  
 end

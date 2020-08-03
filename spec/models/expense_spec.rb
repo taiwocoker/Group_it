@@ -1,3 +1,4 @@
+# rubocop:disable Lint/UselessAssignment
 require 'rails_helper'
 
 RSpec.describe Expense, type: :model do
@@ -20,3 +21,4 @@ RSpec.describe Expense, type: :model do
     it { should have_many(:groups).through(:expense_groups) }
   end
 end
+# rubocop:enable Lint/UselessAssignment

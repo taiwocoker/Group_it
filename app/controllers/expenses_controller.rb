@@ -1,30 +1,28 @@
 class ExpensesController < ApplicationController
-  before_action :set_expense, only: [:show, :edit, :update, :destroy]
+  before_action :set_expense, only: %i[show edit update destroy]
   before_action :require_user
-  
+
   def index
-    @expenses = current_user.expenses.desc.select{|expense| expense.groups.exists?}
+    @expenses = current_user.expenses.desc.select { |expense| expense.groups.exists? }
   end
 
   def external
-    @expenses = current_user.expenses.desc.reject { |expense| expense.groups.exists?}
+    @expenses = current_user.expenses.desc.reject { |expense| expense.groups.exists? }
   end
 
-  def show
-  end
+  def show; end
 
   def new
     @expense = Expense.new
     @groups = current_user.groups
-     @message = if @groups.size.zero?
-      'If you want to choose a group for your expense, you should create a group before adding it.'
-     else
-      'Choose a group for your expense.'
-     end
+    @message = if @groups.size.zero?
+                 'If you want to choose a group for your expense, you should create a group before adding it.'
+               else
+                 'Choose a group for your expense.'
+               end
   end
 
-  def edit
-  end
+  def edit; end
 
   def create
     @expense = current_user.expenses.build(expense_params)
@@ -56,15 +54,16 @@ class ExpensesController < ApplicationController
   end
 
   private
-    def set_expense
-      @expense = Expense.find(params[:id])
-    end
 
-    def expense_params
-      params.require(:expense).permit(:name, :amount)
-    end
+  def set_expense
+    @expense = Expense.find(params[:id])
+  end
 
-    def group_params
-      params.require(:expense).permit(:group_id)
-    end
+  def expense_params
+    params.require(:expense).permit(:name, :amount)
+  end
+
+  def group_params
+    params.require(:expense).permit(:group_id)
+  end
 end
