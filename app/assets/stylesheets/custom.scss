@@ -37,11 +37,16 @@
 
   .main_color{
     background-color: #3778c2 !important;
-    color: white;
+    color: white !important;
   }
 
   .text_color{
     color: #434b54;
+
+  }
+
+  a.text_color:hover {
+    background-color: #fff !important;
   }
 
   .second_color{
@@ -136,6 +141,7 @@ select,
     padding: 10px 75px;
     text-transform: uppercase;
     font-size: large;
+    color: #fff;
   }
 
 .arrow{
@@ -360,10 +366,8 @@ a.nav-item.nav-link {
   position: absolute;
 }
 
-a:link {
-  color: #fff !important;
+a:hover {
+  text-decoration: none;
+  background-color: #3778c2 !important;
 }
 
-a:hover {
-  color: #6d6d6d !important;
-}
