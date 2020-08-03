@@ -2,11 +2,11 @@ require 'rails_helper'
 
 RSpec.feature 'Authentications', type: :feature do
   before :each do
-    @user = User.create(username: 'User')
+    @user = User.create(username: 'user')
   end
   it 'Should Create a new user' do
-    visit new_user_path
-    fill_in 'user[username]', with: 'Username'
+    visit signup_path
+    fill_in 'username', with: 'new_user'
 
     click_button 'Sign up'
     expect(page).to have_content('LOG IN')
@@ -14,18 +14,20 @@ RSpec.feature 'Authentications', type: :feature do
 
   it 'Should Sign in' do
     visit login_path
-    fill_in 'session[username]', with: 'User'
+    fill_in 'username', with: 'user'
     click_button 'Log in'
-    # expect(page).to have_css('.user_avatar')
-    expect(page).to have_content('My External expenses')
+    expect(page).to have_css('.container')
+    
   end
 
   it 'Should Log out' do
     visit login_path
-    fill_in 'username', with: 'User'
-    click_button 'commit'
-    click_on 'Log Out'
-    expect(page).to have_content('Sign In')
-    expect(page).to have_content('Successfully logged out.')
+    fill_in 'username', with: 'user'
+    click_button 'Log in'
+    page.find(:xpath, "//a[@href='/logout']").click
+    expect(page).to have_css('.container')
+    page.find(:xpath, "//a[@href='/logout']").click
+    expect(page).to have_content('LOG IN')
+    expect(page).to have_content('Logged out!')
   end
 end

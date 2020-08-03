@@ -1,20 +1,20 @@
 require 'rails_helper'
 
-RSpec.feature 'Authentications', type: :feature do
+RSpec.feature 'expense', type: :feature do
   before :each do
-    @user = User.create(username: 'User')
+    @user = User.create(username: 'user')
     visit login_path
-    fill_in 'session[username]', with: 'Username'
+    fill_in 'username', with: 'user'
     click_button 'Log in'
   end
 
   it 'Should add a new expense' do
-    visit new_group_path
-    fill_in 'name', with: 'Action'
-    click_button 'commit'
+    # visit new_group_path
+    # fill_in 'group[name]', with: 'Feeding'
+    # click_button 'commit'
 
     visit new_expense_path
-    fill_in 'expense[name]', with: 'Shoes'
+    fill_in "name", with: "Shoes"
     fill_in 'expense[amount]', with: 1
 
     click_button 'commit'
