@@ -24,7 +24,7 @@ class UsersController < ApplicationController
 
       if @user.save
         session[:author_id] = @user.id
-         flash[:success] = 'Welcome to Group-It #{@users.username}'
+         flash[:success] = "Welcome to Group-It #{@user.username}"
         redirect_to login_path
       else
         render :new
