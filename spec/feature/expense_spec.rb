@@ -10,7 +10,7 @@ RSpec.feature 'Authentications', type: :feature do
 
   it 'Should add a new expense' do
     visit new_group_path
-    fill_in 'name', with: ''
+    fill_in 'name', with: 'Action'
     click_button 'commit'
 
     visit new_expense_path
