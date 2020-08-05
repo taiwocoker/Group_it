@@ -28,7 +28,7 @@ class ExpensesController < ApplicationController
     @expense = current_user.expenses.build(expense_params)
     @group = Group.find_by(id: group_params[:group_id])
     @expense.groups << @group unless @group.nil?
-    # @expense.author = User.first
+
     if @expense.save
       flash[:success] = 'Expense created successfully!'
       redirect_to expenses_path
