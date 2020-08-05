@@ -10,16 +10,12 @@
   <% end %>
   </div>
   <div class="h3 text-light p-0 m-0 mx-5"> <%= @title.truncate(23) %> </div>
-  <%# <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button> %>
-  <%# <div class="collapse navbar-collapse" id="navbarNavAltMarkup"> %>
+  
     <div class="navbar_nav">
       <%= link_to 'Profile', current_user, class: "nav-item nav-link white" %>
       <%= link_to 'My Expenses', expenses_path, class: "nav-item nav-link white" %>
       <%= link_to 'My External Expenses', external_path, class: "nav-item nav-link white" %>
       <%= link_to 'My Groups', groups_path, class: "nav-item nav-link white" %>
     </div>
-  <%# </div> %>
   
 </nav>

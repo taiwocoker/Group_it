@@ -1,14 +1,8 @@
 <div class="sign_form bg-custom rounded text-center p-2 py-5 min-vh-100">
     <div class="shadow-lg d-flex align-items-center justify-content-center custom-circle bg-light text-custom font-weight-bold text-center mb-3">
-        <%#= @users.each do |user| %>
-        <% if @user.image.attached? %>
-        <%= image_tag(@user.image, class:"img-responsive w-100 h-100 custom-circle") %>
-        <% else %>
-        <%= image_tag 'user.png', class: 'user_avatar' %>
-        <% end %>
         
+        <%= icon(@user)%>
         
-       <%#= gravatar_image_tag(current_user.username, alt: current_user.username, class:"img-responsive w-100 h-100 custom-circle")%>
     </div>
     <div class="text-light mb-5 h4">
       <%= current_user.username.downcase.capitalize %>

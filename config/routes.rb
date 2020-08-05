@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :groups, except: [:destroy]
-  resources :expenses
-  resources :users
+  resources :expenses, only: [:new, :create, :index]
+  resources :users, only: [:new, :create, :show]
   root 'home#index'
   get 'signup', to: 'users#new'
   get 'login', to: 'sessions#new'
