@@ -13,8 +13,5 @@ RSpec.feature 'add', type: :feature do
     page.has_field? 'name', type: :hidden, with: 'Feeding'
     click_button 'commit'
     expect(page).to have_content('New Group')
-
   end
-
-  
 end

@@ -20,7 +20,4 @@ RSpec.feature 'Authentications', type: :feature do
     expect(page).to have_content('My Expenses')
     expect(page).to have_content('Log Out')
   end
-
-  
-  
 end
