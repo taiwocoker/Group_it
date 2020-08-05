@@ -1,11 +1,8 @@
-<div class="container contain">
-<nav class="main_color">
-  <ul class="ul_in_nav">
-    <li><a class="page" href="/"><i class="fa arrow fa-arrow-left"></i></a></li>
-    <li><a class="page" href="#"><h1>LOG IN</h1></a></li>
-    <li><a class="page" href="#"><h3></h3></a></li>
-  </ul>
-</nav>
+<div class="sign_form bg-custom-light rounded p-2 py-5">
+  <div class="shadow d-flex align-items-center justify-content-center main_color text-white font-weight-bold text-center mb-5 p-5">
+      <span class="h2">LOG IN</span>
+  </div>
+
 
 <%= form_for(:session, :html => {class: "form-horizontal", role: "form"}, url: login_path) do |f| %>
 
@@ -18,18 +15,16 @@
 
 <div class="form-group">
 
-<div class="col-sm-offset-3 col-sm-7">
+<div class="col-sm-offset-3 col-sm-12 w-100">
 
-<%= f.submit "Log in", class: 'btn btn-primary btn-lg' %>
+<%= f.submit "Log in", class: 'w-100 bg-primary text-white border-custom p-2' %>
 
 </div>
 
 </div>
 
 <% end %>
-<div class="col-sm-offset-4 col-sm-6 mt-4 text-info">
- If you don't have an account, then
+<div class="text-center">If you don't have an account, then
     <%= link_to 'Sign up', signup_path %>
-
-  </div>
+  <div>
 </div>
