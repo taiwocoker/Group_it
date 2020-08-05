@@ -16,6 +16,7 @@
 ## Check Video Link
 
    [Description Video](https://www.loom.com/share/e488a137c6914b548c1f07ff10395a32)
+   [The link to the explaination of the N + 1 queries](https://www.loom.com/share/bb5fa1d5dac74ee0bb6aad67cfd35a07)
 
 ## Home page
 
