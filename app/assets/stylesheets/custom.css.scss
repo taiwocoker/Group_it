@@ -1,6 +1,5 @@
 
-@import "bootstrap-sprockets"; 
-@import "bootstrap";
+@import 'bootstrap/dist/css/bootstrap';
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 
 @font-face {
@@ -225,12 +224,6 @@ section {
     }
   }
   
-  .field_with_errors {
-    @extend .has-error;
-    .form-control {
-      color: $state-danger-text;
-    }
-  }
 
   .total{
     display: flex;

@@ -15,35 +15,35 @@
 
 ## Check Video Link
 
-  - [Description Video](https://www.loom.com/share/e488a137c6914b548c1f07ff10395a32)
+   [Description Video](https://www.loom.com/share/e488a137c6914b548c1f07ff10395a32)
 
 ## Home page
 
-  - ![screenshot](./app/assets/images/homepage.PNG)
+   ![screenshot](./app/assets/images/homepage.PNG)
 
 ## Create a user account
 
-  - ![screenshot](./app/assets/images/signup.PNG)
+   ![screenshot](./app/assets/images/signup.PNG)
 
 ## Log in page
 
-  - ![screenshot](./app/assets/images/login.PNG)
+   ![screenshot](./app/assets/images/login.PNG)
 
 ## Profile page
 
-  - ![screenshot](./app/assets/images/profile.PNG)
+   ![screenshot](./app/assets/images/profile.PNG)
 
 ## Add a new expense
 
-  - ![screenshot](./app/assets/images/new_expense.PNG)
+   ![screenshot](./app/assets/images/new_expense.PNG)
 
 ## Groups page
 
-  - ![screenshot](./app/assets/images/groups.PNG)
+   ![screenshot](./app/assets/images/groups.PNG)
 
 ## View external expenses
 
-  - ![screenshot](./app/assets/images/external.PNG)
+   ![screenshot](./app/assets/images/external.PNG)
 
 ## Built With
   - Ruby,
