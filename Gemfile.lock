@@ -58,14 +58,14 @@ GEM
       zeitwerk (~> 2.2, >= 2.2.2)
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
-    autoprefixer-rails (9.8.5)
+    autoprefixer-rails (9.8.6.1)
       execjs
     bindex (0.8.1)
     bootsnap (1.4.7)
       msgpack (~> 1.0)
-    bootstrap-sass (3.3.7)
+    bootstrap-sass (3.4.1)
       autoprefixer-rails (>= 5.2.1)
-      sass (>= 3.3.4)
+      sassc (>= 2.0.0)
     builder (3.2.4)
     bullet (6.1.0)
       activesupport (>= 3.0.0)
@@ -193,11 +193,6 @@ GEM
       rspec-support (~> 3.9)
     rspec-support (3.9.3)
     rubyzip (2.3.0)
-    sass (3.7.4)
-      sass-listen (~> 4.0.0)
-    sass-listen (4.0.0)
-      rb-fsevent (~> 0.9, >= 0.9.4)
-      rb-inotify (~> 0.9, >= 0.9.7)
     sass-rails (6.0.0)
       sassc-rails (~> 2.1, >= 2.1.1)
     sassc (2.4.0)
@@ -260,7 +255,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap (>= 1.4.2)
-  bootstrap-sass (~> 3.3.5)
+  bootstrap-sass (~> 3.4.1)
   bullet
   byebug
   capybara (>= 2.15)
