@@ -55,7 +55,7 @@
 
 ## Live Demo
 
-  - [Live Demo Link](https://serene-tundra-02609.herokuapp.com/)
+  - [Live Demo Link](https://log-expense.herokuapp.com/)
 
 ### Prerequisites
 
